@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hello Ireland</string>
+    <string name="message_start">Irish = 0</string>
+    <string name="message_format">Count = %d</string>
+    <string name="button_decrement">--</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_increment">++</string>
+</resources>
