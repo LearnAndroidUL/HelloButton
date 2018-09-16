@@ -3,6 +3,7 @@ package io.ruszkipista.hellobutton;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
         mTextView = findViewById(R.id.text_count);
         mTextView.setText(getString(R.string.message_format,mCounter));
 
+        Button resetButton = findViewById(R.id.reset_button);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCounter = 0;
+                updateView();
+            }
+        });
+
     }
 
     public void increase_counter(View view){
@@ -29,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateView(){
-        mTextView.setText(getString(R.string.message_format,mCounter));
+        if (mCounter == 13) {
+            mTextView.setText("");
+        } else {
+            mTextView.setText(getString(R.string.message_format, mCounter));
+        }
     }
 }
